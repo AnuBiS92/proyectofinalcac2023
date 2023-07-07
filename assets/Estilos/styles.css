@@ -174,7 +174,7 @@ body {
 		"section2 section2"
 		"section3 section3"
 		"footer footer";
-	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/Imagenes/4K-Restaurant.jpg);
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../Imagenes/4K-Restaurant.jpg);
 	background-repeat: repeat;
 }
 
@@ -305,7 +305,7 @@ body {
 	grid-template-areas: "header header"
 		"form1 form2"
 		"footer footer";
-	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/Imagenes/4K-Restaurant.jpg);
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../Imagenes/4K-Restaurant.jpg);
 	background-repeat: repeat;
 }
 
@@ -520,7 +520,7 @@ iframe {
 		"section9 section10"
 		"section11 section11"
 		"footer footer";
-	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/Imagenes/4K-Restaurant.jpg);
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../Imagenes/4K-Restaurant.jpg);
 	background-repeat: repeat;
 }
 

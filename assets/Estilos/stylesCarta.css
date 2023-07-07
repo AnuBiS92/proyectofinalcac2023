@@ -5,7 +5,7 @@ body {
     grid-template-areas: "header"
         "section1"
         "footer";
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/Imagenes/4K-Restaurant.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../Imagenes/4K-Restaurant.jpg);
     background-repeat: no-repeat;
 }
 
