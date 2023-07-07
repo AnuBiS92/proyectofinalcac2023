@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+body {
+    font-family: Arial, sans-serif;
+    background: #ADA996;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-size: 16px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.contenedor-centrado {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+#gridplatos {
+    display: flex;
+    flex-direction: row;
+}
+
+#gridPlatos>div {
+    display: inline-block;
+}
+
+#platospedido {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#platospedido>div {
+    display: inline-block;
+}
+
+#deletePlatos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.div-eliminaciones{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.div-eliminaciones>div{
+    display: inline-block;
+}
+
+.card-eliminaciones {
+    height: 16em;
+    width: 26em;
+    background-color: #fdab131c;
+}
+
+.img-pedidos{
+    width: 22.17em;
+    height: 15.8em;
+}
+
+.precio {
+    font-size: large;
+}
+
+.currentpage {
+    background-color: #d68e0746;
+
+}
+
+#deletePlatos>div {
+    display: inline-block;
+}
+
+
+.img-td{
+    width: 10em;
+}
+
+
+.card-img-top {
+    width: 17.9em;
+    height: 15em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-align: center;
+    color: #a01f08;
+    font-weight: 600;
+}
+
+footer {
+    bottom: 0px;
+}
+
+button {
+    padding: 8px;
+    margin: 4px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+a {
+    padding: 8px;
+    margin: 4px;
+    background-color: #fdab13;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 85%;
+}
+
+a:hover {
+    background-color: #cd7b00;
+}
+
+.nav-link {
+    font-weight: 600;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.card:hover {
+    opacity: 0.7;
+}
+
+.card-text {
+    text-align: justify;
+}
+
+#txtComment {
+    resize: none;
+}
+
+
+
+@media (max-width: 576px) {
+    .card-text {
+        font-size: 0.8rem;
+    }
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/2cfe264d44.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="/assets/Estilos/styles.css">
+        <link rel="icon" type="image/ico" href="assets/Imagenes/favicon.ico">
+        <title>¿Dónde estamos?</title>
+    </head>
+
+</head>
+
+<body class="body-dondeestamos">
+    <header>
+        <img class="logo" src="/assets/Imagenes/5.png" alt="Logo">
+        <button id="abrir" class="abrir-menu"><i class="bi bi-list"></i></button>
+        <nav class="nav" id="nav">
+            <div class="clima">
+                <div>
+                    <img src="https://w7.pngwing.com/pngs/467/69/png-transparent-computer-icons-weather-cloudy-text-hand-cloud.png"
+                        class="img-clima">
+                </div>
+                <div id="API-clima">
+                    <div class="container">
+                        <div class="temp">°C</div>
+                        <div class="summary">----</div>
+                        <div class="location"></div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <button id="cerrar" class="cerrar-menu"><i class="bi bi-x-circle-fill"></i></button>
+                <ul class="nav-list">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="el_restaurante.html">El restaurante</a></li>
+                    <li><a class="paginaSeleccionada" href="donde_estamos.html">¿Dónde estamos?</a></li>
+                    <li><a href="la_carta.html">La carta</a></li>
+                    <li><a href="contactos.html">Contacto - Reservas</a></li>
+                    <li><a href="/CRUD/index_CRUD.html">CRUD de platos</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <section class="section1-dondeestamos">
+        <article>
+            <p>Nos ubicamos en el acceso a San Martin de los Andes, al margen sur del Lago Lacar. Nos enorgullece
+                ofrecerles los cortes de carne de primera calidad de la parrilla argentina, en un ambiente acogedor y
+                familiar que los invita a disfrutar de una experiencia gastronómica única.</p>
+        </article>
+        <i class="fa-solid fa-arrow-right" style="color: #949014;"></i>
+    </section>
+    <section class="section2-dondeestamos">
+        <article><iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3049.056423834742!2d-71.35805830883807!3d-40.163297429804786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96110e743605d0c7%3A0x71c43ffb1c66bc3a!2sSan%20Martin%20de%20los%20Andes%2C%20Neuqu%C3%A9n!5e0!3m2!1ses-419!2sar!4v1682892606771!5m2!1ses-419!2sar"
+                width="600" height="450" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe></article>
+    </section>
+    <section class="section3-dondeestamos">
+        <article>
+            <p>San Martin de los Andes es un destino turístico popular en la Patagonia Argentina, rodeado de paisajes
+                impresionantes, lagos cristalinos y montañas majestuosas. <br><br> Con sus encantadoras calles de estilo
+                alpino, San
+                Martin de los Andes es un lugar para relajarse y disfrutar de la naturaleza. <br><br> Los turistas
+                pueden practicar
+                senderismo, esquí, pesca y navegación en el lago Lacar, entre otras actividades. Aquí abajo te dejamos
+                un video con un resumen de las actividades más interesantes que podés realizar en esta localidad tan
+                atrapante.</p>
+        </article>
+    </section>
+    <section class="section4-dondeestamos">
+        <article><iframe width="560" height="315" src="https://www.youtube.com/embed/_fJpvIgkVbM"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe></article>
+    </section>
+    <footer>
+        <div>
+            <div id="footer-div1">Seguinos en nuestras redes</div>
+            <div><a href="https://www.instagram.com/" target="_blank"><img class="footer-div-img-1" src="/assets/Imagenes/Logo de Instagram.png" alt=""></a>
+                 <a href="https://twitter.com/" target="_blank"><img class="footer-div-img-1" src="/assets/Imagenes/Logo Linkedin.png" alt=""></a>
+                 <a href="https://www.facebook.com/" target="_blank"><img class="footer-div-img-1" src="/assets/Imagenes/Logo de Facebook.png" alt=""></a></div>
+        </div>
+        <div id="footer-div2" class="footer-div-2">Todos los derechos reservados - 2023</div>
+        <div class="footer-div-3">
+            <div id="footer-div3">Chateá con nosotros</div>
+            <div><a href="https://www.whatsapp.com/" target="_blank"><img id="Whatsapp" class="footer-div-img-1" src="/assets/Imagenes/Ícono de Whatsapp.png" alt=""></a></div>
+        </div>
+    </footer>
+    <script src="/assets/Js/main.js" defer></script>
+    <script src="/assets/Js/api_clima.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuegos Patagónicos - CRUD de platos</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/2cfe264d44.js" crossorigin="anonymous"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="estilos.css">
+    <!-- Mis scripts -->
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/index.html">Ir al sitio web</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item currentpage">
+                        <a class="nav-link" href="index_CRUD.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="altas.html">Alta de platos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="modificaciones.html">Modificar platos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="eliminaciones.html">Eliminar platos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="listado.html">Listar platos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Pedido.html">Hacé tu pedido</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-3">
+        <h1>¡Bienvenidos a Fuegos Patagónicos!</h1><br>
+        <h3>CRUD de platos - Grupo 11 - Codo a Codo Full Stack Python 2023</h3><br>
+        <div class="row  animate__animated animate__bounceInLeft">
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 mb-1">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h5 class="card-title">Alta de platos</h5>
+                        <p class="card-text">Utilice esta función para dar de alta platos. Para ello será necesario que
+                            cuente con los siguientes datos: <br>
+                        <ul class="card-text">
+                            <li>Código (id) del plato</li>
+                            <li>Nombre del plato</li>
+                            <li>Descripción</li>
+                            <li>Precio</li>
+                        </ul>
+                        </p>
+                        <a href="altas.html" class="btn btn-info">Dar de alta un plato</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 mb-3">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h5 class="card-title">Modificar platos</h5>
+                        <p class="card-text">Utilice esta función para modificar platos. Para ello será necesario que
+                            cuente con los siguientes datos: <br>
+                        <ul class="card-text">
+                            <li>Código (id) del plato</li>
+                            <li>Nuevo nombre</li>
+                            <li>Nueva descripción</li>
+                            <li>Nuevo precio</li>
+                        </ul>
+                        </p>
+                        <a href="modificaciones.html" class="btn btn-info">Modificar un plato</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 mb-3">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h5 class="card-title">Eliminar platos</h5>
+                        <p class="card-text">Utilice esta función para eliminar platos. Para ello será necesario que
+                            cuente con los siguientes datos: <br>
+                        <ul class="card-text">
+                            <li>Código (id) del plato</li>
+                        </ul>
+                        </p>
+                        <a href="eliminaciones.html" class="btn btn-info">Eliminar un plato</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 mb-3">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h5 class="card-title">Hacé tu pedido</h5>
+                        <p class="card-text">Aquí ud. podrá realizar su pedido, añadiendo al carrito de compras los
+                            platos que desee. Visualizará una tabla con todos los platos disponibles y desde allí podrá
+                            añadir o quitar los mismos de su pedido.</p>
+                        <a href="Pedido.html" class="btn btn-info">Hacer mi pedido</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 mb-3">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h5 class="card-title">Listar platos</h5>
+                        <p class="card-text">Utilice esta función para obtener una lista de los platos</p>
+                        <a href="listado.html" class="btn btn-info">Obtener lista de platos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="py-3 my-4 bg-dark text-white">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item"><a href="#!" class="nav-link px-2 text-white"><i
+                        class="fa-brands fa-instagram fa-xl"></i></a></li>
+            <li class="nav-item"><a href="#!" class="nav-link px-2 text-white"><i
+                        class="fa-brands fa-facebook fa-xl"></i></a></li>
+            <li class="nav-item"><a href="#!" class="nav-link px-2 text-white"><i
+                        class="fa-brands fa-linkedin fa-xl"></i></a></li>
+            <li class="nav-item"><a href="#!" class="nav-link px-2 text-white"><i
+                        class="fa-brands fa-whatsapp fa-xl"></i></a></li>
+        </ul>
+        <p class="text-center text-white">© <span id="currentYear"></span> Grupo 11 - Codo a Codo 2023</p>
+    </footer>
+
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

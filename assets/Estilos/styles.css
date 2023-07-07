@@ -1,0 +1,855 @@
+/* Importación de fuentes */
+/* Lobster */
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+/* Bebas Neue */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+/* Courgette */
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+/* Noto Sans */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+/* Box sizing, border box */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Animaciones */
+@keyframes Hover_enlace {
+
+	100% {
+		background-color: rgba(114, 50, 13, 0.562);
+		color: white;
+		font-size: 1.6em;
+		border-radius: 8em;
+		text-decoration: underline;
+	}
+
+}
+
+@keyframes logoWhatsapp {
+	0% {
+		width: 3em;
+		height: 3em;
+	}
+
+	100% {
+		width: 3.2em;
+		height: 3.3em;
+	}
+}
+
+/* Estilos de header y footer*/
+header {
+	grid-area: header;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 1rem 1rem 1rem 1rem;
+	background: linear-gradient(135deg, #996227, #b87f5f);
+	position: sticky;
+	top: 0px;
+	z-index: 2;
+}
+
+.logo {
+	width: 11vw;
+	height: 11vw;
+}
+
+nav {
+	align-self: baseline;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 1em;
+}
+
+.clima {
+	display: flex;
+	flex-direction: row;
+	justify-content: end;
+	align-self: flex-end;
+	font-family: Bebas Neue;
+	font-size: 1em;
+	font-weight: 700;
+	background-color: #a0672771;
+	width: 13.8em;
+	padding: 0.3em 0.5em 0.3em 0em;
+	border-radius: 1em;
+}
+
+.img-clima {
+	filter: brightness(1.1);
+	mix-blend-mode: multiply;
+	width: 5vw;
+}
+
+#API-clima {
+	display: flex;
+	justify-content: end;
+}
+
+.nav-list {
+	list-style-type: none;
+	display: flex;
+	gap: 1rem;
+	flex-wrap: wrap;
+}
+
+.nav-list li a {
+	font-size: 1.5em;
+	text-decoration: none;
+	color: #1c1c1c;
+	font-weight: bold;
+	padding: 0.3em;
+	font-family: 'Lobster', cursive;
+}
+
+.paginaSeleccionada {
+	background-color: #5829002d;
+	border-radius: 0.5em;
+	color: wheat !important;
+	text-decoration: underline !important;
+}
+
+.nav-list li a:hover {
+	animation: Hover_enlace 0.3s ease forwards;
+}
+
+footer {
+	grid-area: footer;
+	display: grid;
+	grid-template-columns: 1fr 5fr 1fr;
+	background: linear-gradient(135deg, #9c682f, #af8865);
+	padding: 1.5em 3em 0.7em;
+
+}
+
+footer div {
+	display: flex;
+	flex-direction: column;
+	font-family: 'Bebas Neue', cursive;
+}
+
+footer div div {
+	display: flex;
+	flex-direction: row;
+	gap: 1em;
+	font-family: 'Bebas Neue', cursive;
+
+}
+
+.footer-div-2 {
+	display: flex;
+	align-items: center;
+}
+
+.footer-div-3 {
+	display: flex;
+	align-items: end;
+}
+
+.footer-div-img-1 {
+	width: 2em;
+	height: 2em;
+}
+
+.footer-div-img-3 {
+	width: 3em;
+	height: 3em;
+}
+
+#Whatsapp:hover {
+	animation: logoWhatsapp 0.8s ease forwards;
+}
+
+/* Estilos de la página "index.html */
+body {
+	display: grid;
+	grid-template: auto auto auto auto auto / 1fr 1fr;
+	grid-template-areas: "header header"
+		"section1 section1"
+		"section2 section2"
+		"section3 section3"
+		"footer footer";
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/Imagenes/4K-Restaurant.jpg);
+	background-repeat: repeat;
+}
+
+.h1-index {
+	text-align: center;
+	text-decoration: underline;
+	font-family: 'Courgette', cursive;
+	font-weight: 700;
+	color: #cfca85ec;
+	font-size: 3.5vw;
+}
+
+.section1 {
+	grid-area: section1;
+	padding: 1em;
+}
+
+.section1>article>p {
+	font-family: 'Courgette', cursive;
+	font-weight: 400;
+	font-size: 2.7vw;
+	color: #cfca85ec;
+	text-align: center;
+	background-color: #552b0785;
+	border-radius: 0.4em;
+}
+
+.section2 {
+	grid-area: section2;
+	padding: 1em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.tituloGaleria {
+	font-family: 'Courgette', cursive;
+	font-weight: bold;
+	font-size: 2.9vw;
+	color: #cfca85ec;
+	text-align: center;
+	text-decoration: underline;
+	background-color: #552b0785;
+	border-radius: 0.4em;
+	width: auto;
+	margin-top: 0.4em;
+	margin-bottom: 0.4em;
+}
+
+.galeria {
+	display: flex;
+	flex-direction: row;
+	gap: 1em;
+	align-items: center;
+}
+
+.imggaleria {
+	width: 50vw;
+	border-radius: 2em;
+	border: 0.2em solid wheat;
+
+}
+
+.btnflecha {
+	background-color: #bdbb3a;
+	padding: 0.2em;
+	border-radius: 1em;
+	z-index: 1;
+	cursor: pointer;
+}
+
+.flechaimg {
+	width: 2.8vw;
+	filter: brightness(1.1);
+	mix-blend-mode: multiply;
+}
+
+.section3 {
+	grid-area: section3;
+	padding: 4em;
+	display: flex;
+	justify-content: center;
+}
+
+.section3>article>div {
+	color: wheat;
+	display: flex;
+	flex-direction: column;
+	gap: 0.7em;
+	align-items: center;
+}
+
+.reserva-index {
+	font-family: 'Bebas Neue', cursive;
+	font-size: 2em;
+}
+
+.flecha {
+	font-size: 3.5em;
+}
+
+.btn-reserva {
+	font-size: 1.5em;
+	font-family: 'Bebas Neue', cursive;
+	font-weight: bold;
+	border: 0.2em;
+	border-style: groove;
+	border-radius: 5em;
+	padding: 0.5em;
+	background-color: rgba(213, 231, 53, 0.575);
+	cursor: pointer;
+}
+
+.btn-reserva:hover {
+	background-color: rgba(9, 71, 9, 0.719);
+	color: wheat;
+}
+
+.abrir-menu,
+.cerrar-menu {
+	display: none;
+}
+
+/*Estilos para la página "contacto.html*/
+.body-forms {
+	display: grid;
+	grid-template: auto auto auto / 1fr 1fr;
+	grid-template-areas: "header header"
+		"form1 form2"
+		"footer footer";
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/Imagenes/4K-Restaurant.jpg);
+	background-repeat: repeat;
+}
+
+.form-1 {
+	grid-area: form1;
+}
+
+.form-2 {
+	grid-area: form2;
+}
+
+.contact_form {
+	font-family: 'Noto Sans', sans-serif;
+	width: 34.67vw;
+	height: auto;
+	margin: 0.73vw auto;
+	border-radius: 0.73vw;
+	padding-top: 2.19vw;
+	padding-bottom: 1.46vw;
+	background-color: #ffffff;
+	padding-left: 2.19vw;
+	padding-right: 2.19vw;
+}
+
+.nombre-falso {
+	border: 0.2vw solid red;
+	background-color: rgba(255, 0, 0, 0.233);
+	color: rgba(255, 0, 0, 0.589);
+	font-weight: 500;
+}
+
+input {
+	background-color: #fbfbfb;
+	width: 29.86vw;
+	height: 2.92vw;
+	border-radius: 0.36vw;
+	border-style: solid;
+	border-width: 0.07vw;
+	border-color: #582900;
+	margin-top: 0.73vw;
+	padding-left: 0.73vw;
+	margin-bottom: 1.46vw;
+}
+
+textarea {
+	background-color: #fbfbfb;
+	width: 29.64vw;
+	height: 10.98vw;
+	border-radius: 0.36vw;
+	border-style: solid;
+	border-width: 0.07vw;
+	border-color: #582900;
+	margin-top: 0.73vw;
+	padding-left: 0.73vw;
+	margin-bottom: 1.46vw;
+	padding-top: 1.09vw;
+}
+
+label {
+	font-weight: 800;
+	display: block;
+	float: center;
+}
+
+.button-reserva {
+	height: 3.29vw;
+	padding-left: 0.36vw;
+	padding-right: 0.36vw;
+	margin-bottom: 1.46vw;
+	margin-top: 0.73vw;
+	text-transform: uppercase;
+	background-color: #582900;
+	border-color: #582900;
+	border-style: solid;
+	border-radius: 0.73vw;
+	width: 30.74vw;
+	cursor: pointer;
+}
+
+button p {
+	color: #fff;
+}
+
+span {
+	color: #582900;
+}
+
+.aviso {
+	font-size: 0.95vw;
+	color: #0e0e0e;
+}
+
+h1 {
+	font-size: 2.85vw;
+	text-align: left;
+	padding-bottom: 1.46vw;
+	color: #582900;
+}
+
+h3 {
+	font-size: 1.46vw;
+	padding-bottom: 2.19vw;
+	color: #0e0e0e;
+}
+
+p {
+	font-size: 1.02vw;
+	color: #582900;
+}
+
+::-webkit-input-placeholder {
+	color: #a8a8a8;
+}
+
+::-webkit-textarea-placeholder {
+	color: #a8a8a8;
+}
+
+.formulario input:focus {
+	outline: 0;
+	border: 0.07vw solid #97d848;
+}
+
+.formulario textarea:focus {
+	outline: 0;
+	border: 0.07vw solid #97d848;
+}
+
+/* Estilos de la página "donde_estamos.html */
+
+.body-dondeestamos {
+	display: grid;
+	grid-template: repeat(auto, 5) / repeat(1fr, 2);
+	grid-template-areas: "header header"
+		"section1 section2"
+		"section3 section3"
+		"section4 section4"
+		"footer footer";
+	background-repeat: repeat;
+}
+
+.section1-dondeestamos {
+	grid-area: section1;
+	padding: 1em;
+	display: flex;
+	align-items: center;
+
+}
+
+.section1-dondeestamos>article>p {
+	font-family: 'Courgette', cursive;
+	font-weight: 400;
+	color: wheat;
+	font-size: 2.5vw;
+	text-align: center;
+	background-color: #552b07bd;
+	padding: 0.5em;
+	border-radius: 1em;
+}
+
+.section1-dondeestamos>i {
+	margin-left: 1em;
+	font-size: 5.2vw;
+}
+
+.section2-dondeestamos {
+	grid-area: section2;
+	padding: 3em;
+}
+
+iframe {
+	width: 40vw;
+	height: 30vw;
+	border-radius: 3em;
+	border: 0.4em groove rgba(187, 187, 32, 0.767);
+}
+
+.section3-dondeestamos {
+	grid-area: section3;
+	margin-top: 1em;
+}
+
+.section3-dondeestamos>article>p {
+	font-family: 'Courgette', cursive;
+	font-weight: 400;
+	color: wheat;
+	font-size: 2.5vw;
+	text-align: justify;
+	padding: 0.8em;
+	margin: 0 0.2em 0 0.2em;
+	background-color: #552b07bd;
+	border-radius: 2em;
+}
+
+.section4-dondeestamos {
+	grid-area: section4;
+	display: grid;
+	justify-content: center;
+	padding: 3em;
+}
+
+/* Estilos para la página "el_restaurante" */
+
+.body-elrestaurante {
+	display: grid;
+	grid-template: repeat(auto, 8)/repeat(1fr, 2);
+	grid-template-areas: "header header"
+		"section1 section2"
+		"section3 section4"
+		"section5 section6"
+		"section7 section8"
+		"section9 section10"
+		"section11 section11"
+		"footer footer";
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/Imagenes/4K-Restaurant.jpg);
+	background-repeat: repeat;
+}
+
+.section1-elrestaurante {
+	grid-area: section1;
+}
+
+.section1-elrestaurante>article>p {
+	grid-area: section1;
+	font-family: 'Courgette', cursive;
+	font-weight: 400;
+	color: wheat;
+	font-size: 2.2vw;
+	text-align: justify;
+	padding: 0.8em;
+	margin: 1em;
+	background-color: #552b0793;
+	border-radius: 2em;
+}
+
+.section2-elrestaurante {
+	grid-area: section2;
+	display: flex;
+	justify-content: center;
+}
+
+.section2-elrestaurante img {
+	border-radius: 1em;
+	margin: 2em;
+	width: 35vw;
+
+}
+
+.section3-elrestaurante {
+	grid-area: section3;
+	display: flex;
+	justify-content: center;
+}
+
+.section3-elrestaurante img {
+	border-radius: 1em;
+	margin: 2em;
+	width: 35vw;
+
+}
+
+.section4-elrestaurante {
+	grid-area: section4;
+}
+
+.section4-elrestaurante>article>p {
+	grid-area: section4;
+	font-family: 'Courgette', cursive;
+	font-weight: 400;
+	color: wheat;
+	font-size: 2.2vw;
+	text-align: justify;
+	padding: 0.8em;
+	margin: 1em;
+	background-color: #552b0793;
+	border-radius: 2em;
+}
+
+.section5-elrestaurante {
+	grid-area: section5;
+}
+
+.section5-elrestaurante>article>p {
+	grid-area: section5;
+	font-family: 'Courgette', cursive;
+	font-weight: 400;
+	color: wheat;
+	font-size: 2.2vw;
+	text-align: justify;
+	padding: 0.8em;
+	margin: 1em;
+	background-color: #552b0793;
+	border-radius: 2em;
+}
+
+.section6-elrestaurante {
+	grid-area: section6;
+	display: flex;
+	justify-content: center;
+}
+
+.section6-elrestaurante img {
+	border-radius: 1em;
+	margin: 2em;
+	width: 35vw;
+}
+
+.section7-elrestaurante {
+	grid-area: section7;
+	display: flex;
+	justify-content: center;
+}
+
+.section7-elrestaurante img {
+	border-radius: 1em;
+	margin: 2em;
+	width: 35vw;
+
+}
+
+.section8-elrestaurante {
+	grid-area: section8;
+}
+
+.section8-elrestaurante>article>p {
+	grid-area: section8;
+	font-family: 'Courgette', cursive;
+	font-weight: 400;
+	color: wheat;
+	font-size: 2.2vw;
+	text-align: justify;
+	padding: 0.8em;
+	margin: 1em;
+	background-color: #552b0793;
+	border-radius: 2em;
+}
+
+.section9-elrestaurante {
+	grid-area: section9;
+}
+
+.section9-elrestaurante>article>p {
+	grid-area: section9;
+	font-family: 'Courgette', cursive;
+	font-weight: 400;
+	color: wheat;
+	font-size: 2.2vw;
+	text-align: justify;
+	padding: 0.8em;
+	margin: 1em;
+	background-color: #552b0793;
+	border-radius: 2em;
+}
+
+.section10-elrestaurante {
+	grid-area: section10;
+	display: flex;
+	justify-content: center;
+}
+
+.section10-elrestaurante img {
+	border-radius: 1em;
+	margin: 2em;
+	width: 35vw;
+}
+
+.section11-elrestaurante {
+	grid-area: section11;
+}
+
+.section11-elrestaurante>article>p {
+	grid-area: section11;
+	font-family: 'Courgette', cursive;
+	font-weight: 400;
+	color: wheat;
+	font-size: 2.2vw;
+	text-align: justify;
+	padding: 0.8em;
+	margin: 1em;
+	background-color: #2c2c0cab;
+	border-radius: 2em;
+}
+
+@media screen and (max-width: 858px) {
+
+	.nav-list li a {
+		font-size: 95%;
+	}
+
+	.logo {
+		min-width: 100px;
+		min-height: 100px;
+		top: 0;
+	}
+
+	.img-clima {
+		min-width: 50px;
+	}
+}
+
+/* Punto de corte 660px */
+@media screen and (max-width: 618px) {
+
+	@keyframes Hover_enlace {
+		0% {
+			text-decoration: none;
+			color: #1c1c1c;
+			font-weight: bold;
+		}
+
+		100% {
+			background-color: firebrick;
+			color: white;
+			border-radius: 8em;
+			text-decoration: underline;
+		}
+
+	}
+
+	.clima {
+		display: none;
+	}
+
+	.abrir-menu,
+	.cerrar-menu {
+		display: block;
+		border: 0;
+		font-size: 2rem;
+		background-color: transparent;
+		cursor: pointer;
+	}
+
+	.abrir-menu {
+		color: #1c1c1c;
+	}
+
+	.cerrar-menu {
+		color: #ececec;
+	}
+
+	.paginaSeleccionada {
+		background-color: #97d84850;
+	}
+
+	.nav {
+		opacity: 0;
+		visibility: hidden;
+		display: flex;
+		flex-direction: column;
+		align-items: end;
+		gap: 1rem;
+		position: absolute;
+		top: 0;
+		right: 0;
+		font-size: 0.8rem;
+		background-color: #1c1c1c;
+		padding: 2rem;
+		box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+		height: 100vh;
+	}
+
+	.nav.visible {
+		opacity: 1;
+		visibility: visible;
+		z-index: 1000;
+	}
+
+	.nav-list {
+		flex-direction: column;
+		align-items: end;
+	}
+
+	.nav-list li a {
+		color: #ecececec;
+	}
+
+	#footer-div1,
+	#footer-div3,
+	#footer-div2 {
+		display: none;
+	}
+
+	.body-elrestaurante {
+		grid-template: repeat(auto, 13)/ repeat(2, 1fr);
+		grid-template-areas: "header header"
+			"section1 section1"
+			"section2 section2"
+			"section4 section4"
+			"section3 section3"
+			"section5 section5"
+			"section6 section6"
+			"section8 section8"
+			"section7 section7"
+			"section9 section9"
+			"section10 section10"
+			"section11 section11"
+			"footer footer";
+	}
+
+	.body-elrestaurante section article p {
+		font-size: 15px;
+	}
+
+	.body-elrestaurante section img {
+		width: 400px;
+	}
+
+	.body-dondeestamos {
+		grid-template: repeat(auto, 6) / repeat(1fr, 2);
+		grid-template-areas: "header header"
+			"section1 section1"
+			"section2 section2"
+			"section3 section3"
+			"section4 section4"
+			"footer footer";
+	}
+
+	.body-dondeestamos section article p {
+		font-size: 20px;
+	}
+
+	.fa-solid {
+		display: none;
+	}
+
+	.section2-dondeestamos {
+		margin-left: 50px;
+	}
+
+	iframe {
+		width: 350px;
+		height: 250px;
+	}
+
+	.body-forms {
+		display: grid;
+		grid-template: auto auto auto auto / 1fr;
+		grid-template-areas: "header"
+			"form1"
+			"form2"
+			"footer";
+	}
+
+	.contact_form {
+		width: 50%;
+	}
+}

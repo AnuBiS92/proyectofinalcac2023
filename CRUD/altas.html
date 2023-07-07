@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuegos Patagónicos - Alta de platos</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/2cfe264d44.js" crossorigin="anonymous"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="estilos.css">
+    <!-- Mis scripts -->
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/index.html">Ir al sitio web</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index_CRUD.html">Inicio</a>
+                    </li>
+                    <li class="nav-item currentpage">
+                        <a class="nav-link" href="altas.html">Alta de platos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="modificaciones.html">Modificar platos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="eliminaciones.html">Eliminar platos</a>
+                    </li>
+                    <li class="nav-item">
+                    <li class="nav-item">
+                        <a class="nav-link" href="listado.html">Listar platos</a>
+                    </li>
+                    <a class="nav-link" href="Pedido.html">Hacé tu pedido</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-3">
+        <h1 class="mb-3 text-opacity-75">Añadir platos a la carta</h1>
+    </div>
+    <form id="formulario">
+        <div class="container col-sm-6 col-md-4 col-lg-4 col-xl-">
+            <div class="mb-3">
+                <label for="codigo" class="form-label fw-bold">Código</label>
+                <input type="number" class="form-control border-dark-subtle" id="codigo"
+                    placeholder="Ingrese el código (número) del plato">
+            </div>
+            <div class="mb-3">
+                <label for="nombre" class="form-label fw-bold">Nombre del plato</label>
+                <textarea class="form-control border-dark-subtle" id="nombre" rows="1"
+                    placeholder="Ingrese el nombre del plato"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="descripcion" class="form-label fw-bold">Descripción</label>
+                <textarea class="form-control border-dark-subtle" id="descripcion" rows="3"
+                    placeholder="Ingrese una breve descripción del plato"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="precio" class="form-label fw-bold">Precio</label>
+                <input type="number" class="form-control border-dark-subtle" id="precio"
+                    placeholder="Ingrese el precio del plato" step="0.10">
+            </div>
+            <div class="mb-3">
+                <label for="url" class="form-label fw-bold">URL de imagen</label>
+                <input type="text" class="form-control border-dark-subtle" id="url"
+                    placeholder="Ingrese la URL de la imagen del plato">
+            </div>
+            <div class="text-center mt-3">
+                <button class="btn btn-success"><i class="fa-solid fa-plus fa-lg me-2"
+                        style="color: #ffffff;"></i>Añadir plato</button>
+                <a href="index_CRUD.html" class="btn btn-primary"><i class="fa-solid fa-arrow-left fa-xl me-2"
+                        style="color: #ffffff;"></i>Volver</a>
+            </div>
+    </form>
+    </div>
+    </form>
+    <footer class="py-3 my-4 bg-dark text-white">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item"><a href="#!" class="nav-link px-2 text-white"><i
+                        class="fa-brands fa-instagram fa-xl"></i></a></li>
+            <li class="nav-item"><a href="#!" class="nav-link px-2 text-white"><i
+                        class="fa-brands fa-facebook fa-xl"></i></a></li>
+            <li class="nav-item"><a href="#!" class="nav-link px-2 text-white"><i
+                        class="fa-brands fa-linkedin fa-xl"></i></a></li>
+            <li class="nav-item"><a href="#!" class="nav-link px-2 text-white"><i
+                        class="fa-brands fa-whatsapp fa-xl"></i></a></li>
+        </ul>
+        <p class="text-center text-white">© <span id="currentYear"></span> Grupo 11 - Codo a Codo 2023</p>
+    </footer>
+    <script>
+        const URL = "http://emilianoalvarez.pythonanywhere.com/"
+        document.getElementById('formulario').addEventListener('submit', function (event) {
+            event.preventDefault();
+            var codigo = document.getElementById('codigo').value;
+            var nombre = document.getElementById('nombre').value;
+            var descripcion = document.getElementById('descripcion').value;
+            var precio = document.getElementById('precio').value;
+            var url = document.getElementById('url').value;
+            var plato = {
+                codigo: codigo,
+                nombre: nombre,
+                descripcion: descripcion,
+                precio: precio,
+                url: url,
+            };
+            console.log(plato)
+            fetch(URL + 'platos', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(plato)
+            })
+                .then(function (response) {
+                    if (response.ok) {
+                        return response.json();
+                    } else {
+                        throw new Error('Error al agregar el plato.');
+                    }
+                })
+                .then(function (data) {
+                    alert('Plato agregado correctamente.');
+                    document.getElementById('codigo').value = "";
+                    document.getElementById('nombre').value = "";
+                    document.getElementById('descripcion').value = "";
+                    document.getElementById('precio').value = "";
+                    document.getElementById('url').value = "";
+                })
+                .catch(function (error) {
+                    alert('Error al agregar el plato.');
+                });
+        })
+    </script>
+</body>
+
+</html>
