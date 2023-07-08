@@ -57,15 +57,9 @@ body {
 }
 
 .card-eliminaciones {
-    height: 16em;
-    width: 26em;
     background-color: #fdab131c;
 }
 
-.img-pedidos{
-    width: 22.17em;
-    height: 15.8em;
-}
 
 .precio {
     font-size: large;
@@ -78,17 +72,6 @@ body {
 
 #deletePlatos>div {
     display: inline-block;
-}
-
-
-.img-td{
-    width: 10em;
-}
-
-
-.card-img-top {
-    width: 17.9em;
-    height: 15em;
 }
 
 h1,
@@ -154,12 +137,4 @@ a:hover {
 
 #txtComment {
     resize: none;
-}
-
-
-
-@media (max-width: 576px) {
-    .card-text {
-        font-size: 0.8rem;
-    }
 }
