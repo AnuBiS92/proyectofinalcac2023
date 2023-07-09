@@ -78,17 +78,23 @@
         <thead>
           <tr>
             <th>Código</th>
-            <th>Descripción</th>
+            <th>Nombre</th>
             <th>Cantidad</th>
             <th>Precio</th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="item in pedido" :key="item.codigo">
-            <td>{{ item.platoId }}</td>
-            <td>{{ item.description }}</td>
-            <td>{{ plato.cantidad }}</td>
-            <td>&nbsp; &nbsp; {{ plato.precio }} &nbsp; &nbsp;</td>
+            <td>{{ item.codigo }}</td>
+            <td>{{ item.nombre }}</td>
+            <td>{{ item.cantidad }}</td>
+            <td>{{ item.precio }}</td>
+          </tr>
+          <tr class="bg-info text-white">
+            <td class="bg-info text-white"></td>
+            <td class="bg-info text-white"></td>
+            <td class="bg-info text-white">Total: </td>
+            <td class="bg-info text-white">{{ total }}</td>
           </tr>
         </tbody>
       </table>
@@ -108,22 +114,22 @@
   </div>
   <footer class="py-3 bg-dark text-white">
     <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-        <li class="nav-item"><a href="#!" class="nav-link px-2 text-white"><i
-                    class="fa-brands fa-instagram fa-xl"></i></a></li>
-        <li class="nav-item"><a href="#!" class="nav-link px-2 text-white"><i
-                    class="fa-brands fa-facebook fa-xl"></i></a></li>
-        <li class="nav-item"><a href="#!" class="nav-link px-2 text-white"q><i
-                    class="fa-brands fa-linkedin fa-xl"></i></a></li>
-        <li class="nav-item"><a href="#!" class="nav-link px-2 text-white"><i
-                    class="fa-brands fa-whatsapp fa-xl"></i></a></li>
+      <li class="nav-item"><a href="#!" class="nav-link px-2 text-white"><i
+            class="fa-brands fa-instagram fa-xl"></i></a></li>
+      <li class="nav-item"><a href="#!" class="nav-link px-2 text-white"><i class="fa-brands fa-facebook fa-xl"></i></a>
+      </li>
+      <li class="nav-item"><a href="#!" class="nav-link px-2 text-white" q><i
+            class="fa-brands fa-linkedin fa-xl"></i></a></li>
+      <li class="nav-item"><a href="#!" class="nav-link px-2 text-white"><i class="fa-brands fa-whatsapp fa-xl"></i></a>
+      </li>
     </ul>
     <p class="text-center text-white">© <span id="currentYear"></span> Grupo 11 - Codo a Codo 2023</p>
-</footer>
+  </footer>
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <script src="https://unpkg.com/vue@3"></script>
   <script src="https://unpkg.com/vue@next"></script>
   <script>
-    uuidv4 = ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c => (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16))
+    // uuidv4 = ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c => (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16))
 
     const URL = "https://emilianoalvarez.pythonanywhere.com/"
     const Pedido = Vue.createApp({
@@ -132,6 +138,7 @@
           platos: [],
           mostrarPedido: false,
           pedido: [],
+          total: 0
         };
       },
       created() {
@@ -167,7 +174,8 @@
             .catch(error => {
               console.error('Error al agregar el plato al pedido:', error);
               alert('Error al agregar el plato al pedido.');
-            });
+            })
+          this.total += plato.precio
         },
         restarDelPedido(plato) {
           fetch(URL + 'pedido', {
@@ -196,10 +204,10 @@
               this.pedido = data;
               this.mostrarPedido = true;
             })
-            .catch(error => {
-              console.error('Error al obtener el pedido:', error);
-              alert('Error al obtener el pedido.');
-            });
+          .catch(error => {
+            console.error('Error al obtener el pedido:', error);
+            alert('Error al obtener el pedido.');
+          });
         },
       },
     });

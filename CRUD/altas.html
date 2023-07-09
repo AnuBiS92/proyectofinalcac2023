@@ -25,32 +25,32 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="../index.html"">Ir al sitio web</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            <button class=" navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index_CRUD.html">Inicio</a>
-                    </li>
-                    <li class="nav-item currentpage">
-                        <a class="nav-link" href="altas.html">Alta de platos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="modificaciones.html">Modificar platos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="eliminaciones.html">Eliminar platos</a>
-                    </li>
-                    <li class="nav-item">
-                    <li class="nav-item">
-                        <a class="nav-link" href="listado.html">Listar platos</a>
-                    </li>
-                    <a class="nav-link" href="Pedido.html">Hacé tu pedido</a>
-                    </li>
-                </ul>
-            </div>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index_CRUD.html">Inicio</a>
+                        </li>
+                        <li class="nav-item currentpage">
+                            <a class="nav-link" href="altas.html">Alta de platos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="modificaciones.html">Modificar platos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="eliminaciones.html">Eliminar platos</a>
+                        </li>
+                        <li class="nav-item">
+                        <li class="nav-item">
+                            <a class="nav-link" href="listado.html">Listar platos</a>
+                        </li>
+                        <a class="nav-link" href="Pedido.html">Hacé tu pedido</a>
+                        </li>
+                    </ul>
+                </div>
         </div>
     </nav>
     <div class="container mt-3">
@@ -58,11 +58,6 @@
     </div>
     <form id="formulario">
         <div class="container col-sm-6 col-md-4 col-lg-4 col-xl-">
-            <div class="mb-3">
-                <label for="codigo" class="form-label fw-bold">Código</label>
-                <input type="number" class="form-control border-dark-subtle" id="codigo"
-                    placeholder="Ingrese el código (número) del plato">
-            </div>
             <div class="mb-3">
                 <label for="nombre" class="form-label fw-bold">Nombre del plato</label>
                 <textarea class="form-control border-dark-subtle" id="nombre" rows="1"
@@ -109,13 +104,11 @@
         const URL = "https://emilianoalvarez.pythonanywhere.com/"
         document.getElementById('formulario').addEventListener('submit', function (event) {
             event.preventDefault();
-            var codigo = document.getElementById('codigo').value;
             var nombre = document.getElementById('nombre').value;
             var descripcion = document.getElementById('descripcion').value;
             var precio = document.getElementById('precio').value;
             var url = document.getElementById('url').value;
             var plato = {
-                codigo: codigo,
                 nombre: nombre,
                 descripcion: descripcion,
                 precio: precio,
@@ -138,7 +131,6 @@
                 })
                 .then(function (data) {
                     alert('Plato agregado correctamente.');
-                    document.getElementById('codigo').value = "";
                     document.getElementById('nombre').value = "";
                     document.getElementById('descripcion').value = "";
                     document.getElementById('precio').value = "";
