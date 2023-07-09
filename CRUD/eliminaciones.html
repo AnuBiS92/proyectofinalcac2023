@@ -56,7 +56,7 @@
     <div id="body" class="container mt-3">
         <h1>Eliminar platos</h1>
         <div class="container text-center mt-3  div-eliminaciones">
-            <div class="container text-center mt-3 div-eliminaciones col-sm-6 mb-3" v-for="plato in platos">
+            <div class="container text-center mt-3 div-eliminaciones col-sm-6" v-for="plato in platos">
                 <div class="card card-eliminaciones">
                     <div class="card-body">
                         <h5 class="card-title">ID: {{ plato.codigo}} - {{ plato.nombre }}</h5>
@@ -74,13 +74,13 @@
                     style="color: #ffffff;"></i>Volver</a>
         </div>
     </div>
-    <footer class="py-3 my-4 bg-dark text-white">
+    <footer class="py-3 bg-dark text-white">
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
             <li class="nav-item"><a href="#!" class="nav-link px-2 text-white"><i
                         class="fa-brands fa-instagram fa-xl"></i></a></li>
             <li class="nav-item"><a href="#!" class="nav-link px-2 text-white"><i
                         class="fa-brands fa-facebook fa-xl"></i></a></li>
-            <li class="nav-item"><a href="#!" class="nav-link px-2 text-white"><i
+            <li class="nav-item"><a href="#!" class="nav-link px-2 text-white"q><i
                         class="fa-brands fa-linkedin fa-xl"></i></a></li>
             <li class="nav-item"><a href="#!" class="nav-link px-2 text-white"><i
                         class="fa-brands fa-whatsapp fa-xl"></i></a></li>
@@ -89,7 +89,7 @@
     </footer>
     <script src="https://unpkg.com/vue@next"></script>
     <script>
-        const URL = "http://emilianoalvarez.pythonanywhere.com/";
+        const URL = "https://emilianoalvarez.pythonanywhere.com/";
         const app = Vue.createApp({
             data() {
                 return {

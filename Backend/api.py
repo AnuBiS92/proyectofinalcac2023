@@ -104,6 +104,7 @@ class Carta:
         return jsonify({'message': 'Plato no encontrado.'}), 404
 
 class Pedido:
+    items = []
     def agregar(self, codigo, cantidad, carta):
         plato = carta.consultar_plato(codigo)
         for item in self.items:
