@@ -54,11 +54,11 @@
         </div>
     </nav>
 
-    <section class="">
+    <section>
 
-        <div class="container-fluid px-0">
-            <div class="row g-0">
-                <div id="app" class="col-lg-6 ">
+        <div class="container-fluid">
+            <div class="row g-0 mt-3 justify-content-around">
+                <div id="app" class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
                     <h3>Hacé tu pedido</h3>
                     <div class="row row-cols-1 row-cols-md-3 g-4">
                         <div class="col" v-for="plato in platos">
@@ -82,9 +82,10 @@
 
                 </div>
 
-                <div class="col-lg-6 align-items-center">
+                <div class="col-sm-12 col-md-12 col-lg-5 col-xl-5 align-items-center">
                     <h3>Productos en el pedido</h3>
-                    <table class="table table-warning table-striped  align-items-center">
+                    <table id="tabla"
+                        class="table table-warning table-striped table-bordered rounded align-items-center">
                         <thead>
                             <tr>
                                 <th>Código</th>
@@ -94,13 +95,18 @@
                             </tr>
                         </thead>
 
-                        <tbody id="tablaPedido">
+                        <tbody id="tablaPedido" class="table table-success table-striped">
                             <tr>
-                                <th scope="row" colspan="5">Loading...</th>
+                                <th scope="row" colspan="5">Cargando...</th>
                             </tr>
                         </tbody>
 
                     </table>
+                    <div class="contenedor-centrado">
+                        <a class="btn btn-success" href="pedidorealizado.html"><i
+                                class="fa-sharp fa-solid fa-paper-plane fa-lg me-2" style="color: #ffffff;"></i>Enviar
+                            pedido</a>
+                    </div>
 
                 </div>
 
@@ -109,7 +115,7 @@
 
     </section>
     <div class="contenedor-centrado">
-        <a class="btn btn-primary" href="index_CRUD.html"><i class="fa-solid fa-arrow-left fa-xl me-2"
+        <a class="btn btn-primary" href="index_CRUD.html"><i class="fa-solid fa-arrow-left fa-lg me-2"
                 style="color: #ffffff;"></i>Volver</a>
     </div>
 
@@ -141,10 +147,9 @@
         const uuidv4 = ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c => (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16))
 
         obtenerPedido = () => {
-            fetch('https://emilianoalvarez.pythonanywhere.com/pedido')
+            fetch(URL + 'pedido')
                 .then(response => response.json())
                 .then(data => {
-                    console.log(data);
                     let trHTML = "";
                     let total = 0;
                     const objects = data;
@@ -154,13 +159,13 @@
                         trHTML += "<td class ='sorting_1'>" + object["codigo"] + "</td>";
                         trHTML += "<td>" + object["nombre"] + "</td>";
                         trHTML += "<td>" + object["cantidad"] + "</td>";
-                        trHTML += "<td>" + object["precio"] + "</td>";
-                        total += object["precio"];
+                        trHTML += "<td>$ " + object["precio"] + "</td>";
+                        total += object["precio"] * object["cantidad"];
                     }
 
                     trHTML += '<tfoot><tr>';
-                    trHTML += '<td class="right" colspan="3">Total</td>';
-                    trHTML += `<td class="right" >${total}</td>`;
+                    trHTML += '<td class="right" colspan="3"><b>Total</b></td>';
+                    trHTML += `<td class="right"><b>$ ${total}</b></td>`;
                     trHTML += '</tr></tfoot>';
                     chgtst = document.getElementById("tablaPedido")
                     chgtst.innerHTML = trHTML;

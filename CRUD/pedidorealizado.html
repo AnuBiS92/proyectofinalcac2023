@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fuegos Patagónicos - Listado de platos</title>
+    <title>Fuegos Patagónicos - Pedido</title>
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
@@ -24,7 +24,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="../index.html"">Ir al sitio web</a>
+            <a class="navbar-brand" href="../index.html">Ir al sitio web</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -42,9 +42,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="eliminaciones.html">Eliminar platos</a>
-                    </li>
-                    <li class="nav-item currentpage">
+                    <li class="nav-item">
                         <a class="nav-link" href="listado.html">Listar platos</a>
+                    </li>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="Pedido.html">Hacé tu pedido</a>
@@ -53,50 +53,25 @@
             </div>
         </div>
     </nav>
-    <div class="container text-center mt-3">
-        <h1>Nuestra carta</h1>
-        <div id="gridPlatos">
-        </div>
-        <div class="text-center mt-3">
-            <a href="index_CRUD.html" class="btn btn-primary"><i class="fa-solid fa-arrow-left fa-xl me-2"
-                    style="color: #ffffff;"></i>Volver</a>
-        </div>
+    <div class="container my-5 py-5 bg-warning-subtle rounded-3">
+    <h1>¡Muchas gracias por escoger Fuegos Patagónicos!. En breve se acercará un camarero con tu pedido y podrás
+        disfrutar de nuestros exquisitos platos. Ante cualquier consulta o inquietud, no dudes en llamarnos.</h1>
     </div>
     <footer class="py-3 bg-dark text-white">
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
             <li class="nav-item"><a href="#!" class="nav-link px-2 text-white"><i
                         class="fa-brands fa-instagram fa-xl"></i></a></li>
             <li class="nav-item"><a href="#!" class="nav-link px-2 text-white"><i
-                        class="fa-brands fa-facebook fa-xl"></i></a></li>
-            <li class="nav-item"><a href="#!" class="nav-link px-2 text-white"><i
+                        class="fa-brands fa-facebook fa-xl"></i></a>
+            </li>
+            <li class="nav-item"><a href="#!" class="nav-link px-2 text-white" q><i
                         class="fa-brands fa-linkedin fa-xl"></i></a></li>
             <li class="nav-item"><a href="#!" class="nav-link px-2 text-white"><i
-                        class="fa-brands fa-whatsapp fa-xl"></i></a></li>
+                        class="fa-brands fa-whatsapp fa-xl"></i></a>
+            </li>
         </ul>
         <p class="text-center text-white">© <span id="currentYear"></span> Grupo 11 - Codo a Codo 2023</p>
     </footer>
-    <script>
-        const URL = "https://emilianoalvarez.pythonanywhere.com/"
-        fetch(URL + 'platos')
-            .then(function (response) {
-                if (response.ok) {
-                    return response.json();
-                } else {
-                    throw new Error('Error al obtener los platos.');
-                }
-            })
-            .then(function (data) {
-                var tablaPlatos = document.getElementById('gridPlatos');
-                data.forEach(function (plato) {
-                    var fila = document.createElement('div');
-                    fila.innerHTML = '<div class="card col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 mx-3" style="width: 18rem"><img src="' + plato.URL + '" class="card-img-top" style="max-height: 12rem"><div class="card-body"><h5 class="card-title">' + plato.nombre + '</h5><p class="card-text">' + plato.descripcion + '</p><p class="card-text"><b>$ ' + plato.precio + '</b></p>'
-                    tablaPlatos.appendChild(fila);
-                });
-            })
-            .catch(function (error) {
-                alert('Error al obtener los platos.');
-            });
-    </script>
 </body>
 
 </html>
