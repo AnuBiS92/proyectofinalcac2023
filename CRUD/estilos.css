@@ -45,14 +45,14 @@ body {
     justify-content: center;
 }
 
-.div-eliminaciones{
+.div-eliminaciones {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.div-eliminaciones>div{
+.div-eliminaciones>div {
     display: inline-block;
 }
 

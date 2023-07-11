@@ -53,12 +53,10 @@
             </div>
         </div>
     </nav>
-
     <section>
-
         <div class="container-fluid">
-            <div class="row g-0 mt-3 justify-content-around">
-                <div id="app" class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+            <div id="app" class="row g-0 mt-3 justify-content-around">
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
                     <h3>Hacé tu pedido</h3>
                     <div class="row row-cols-1 row-cols-md-3 g-4">
                         <div class="col" v-for="plato in platos">
@@ -79,37 +77,31 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
-
-                <div class="col-sm-12 col-md-12 col-lg-5 col-xl-5 align-items-center">
-                    <h3>Productos en el pedido</h3>
-                    <table id="tabla"
-                        class="table table-warning table-striped table-bordered rounded align-items-center">
+                <div class="col-sm-12 col-md-12 col-lg-5 col-xl-5">
+                    <h3>Tu pedido</h3>
+                    <table class="table table-danger table-striped">
                         <thead>
                             <tr>
                                 <th>Código</th>
                                 <th>Nombre</th>
                                 <th>Cantidad</th>
                                 <th>Precio</th>
+                                <!-- <th>Agregar / quitar</th> -->
                             </tr>
                         </thead>
-
-                        <tbody id="tablaPedido" class="table table-success table-striped">
+                        <tbody id="tablaPedido">
                             <tr>
-                                <th scope="row" colspan="5">Cargando...</th>
+                                <th scope="row" colspan="5">Cargando tu pedido...</th>
                             </tr>
                         </tbody>
-
                     </table>
                     <div class="contenedor-centrado">
                         <a class="btn btn-success" href="pedidorealizado.html"><i
-                                class="fa-sharp fa-solid fa-paper-plane fa-lg me-2" style="color: #ffffff;"></i>Enviar
+                                class="fa-sharp fa-solid fa-paper-plane fa-lg me-2" style="color: #fafcff;"></i>Enviar
                             pedido</a>
                     </div>
-
                 </div>
-
             </div>
         </div>
 
@@ -142,54 +134,19 @@
     <script src="https://unpkg.com/vue@3"></script>
     <script src="https://unpkg.com/vue@next"></script>
     <script>
-
         const URL = "https://emilianoalvarez.pythonanywhere.com/"
-        const uuidv4 = ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c => (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16))
-
-        obtenerPedido = () => {
-            fetch(URL + 'pedido')
-                .then(response => response.json())
-                .then(data => {
-                    let trHTML = "";
-                    let total = 0;
-                    const objects = data;
-
-                    for (let object of objects) {
-                        trHTML += '<tr>';
-                        trHTML += "<td class ='sorting_1'>" + object["codigo"] + "</td>";
-                        trHTML += "<td>" + object["nombre"] + "</td>";
-                        trHTML += "<td>" + object["cantidad"] + "</td>";
-                        trHTML += "<td>$ " + object["precio"] + "</td>";
-                        total += object["precio"] * object["cantidad"];
-                    }
-
-                    trHTML += '<tfoot><tr>';
-                    trHTML += '<td class="right" colspan="3"><b>Total</b></td>';
-                    trHTML += `<td class="right"><b>$ ${total}</b></td>`;
-                    trHTML += '</tr></tfoot>';
-                    chgtst = document.getElementById("tablaPedido")
-                    chgtst.innerHTML = trHTML;
-
-                }
-                )
-                .catch(error => {
-                    console.error('Error al obtener el pedido:', error);
-                    alert('Error al obtener el pedido.');
-                });
-        }
-
-        obtenerPedido();
-
         const Pedido = Vue.createApp({
             data() {
                 return {
                     platos: [],
+                    pedido: [],
+
                 };
             },
             created() {
                 this.obtenerPlatos();
+                this.obtenerPedido();
             },
-
             methods: {
                 obtenerPlatos() {
                     fetch(URL + 'platos')
@@ -213,17 +170,15 @@
                             cantidad: 1,
                         }),
                     })
-                        .then(response => response.json()
-                        )
-                        .then(data => {
-                            console.log(data)
-                        })
-                        .then(obtenerPedido())
+                        .then(response => response.json())
+                        // .then(data => {
+                        //     alert(data.message);
+                        // })
+                        .then(this.obtenerPedido())
                         .catch(error => {
                             console.error('Error al agregar el plato al pedido:', error);
-                            alert('Error al agregar el plato al pedido.');
                         });
-
+                    this.obtenerPedido()
                 },
                 restarDelPedido(plato) {
                     fetch(URL + 'pedido', {
@@ -238,23 +193,46 @@
                     })
                         .then(response => response.json())
                         .then(data => {
-                            console.log(data)
+                            // alert(data.message);
                         })
-                        // .then(obtenerPedido())
+                        .then(this.obtenerPedido())
                         .catch(error => {
                             console.error('Error al restar el plato del pedido:', error);
-                            // alert('Error al restar el plato del pedido.');
+                            // alert('Error al restar el producto del pedido.');
                         });
-
-                    obtenerPedido();
+                    this.obtenerPedido()
                 },
-
-
+                obtenerPedido() {
+                    fetch(URL + 'pedido')
+                        .then(response => response.json())
+                        .then(data => {
+                            let trHTML = "";
+                            let total = 0;
+                            this.pedido = data;
+                            for (let item of this.pedido) {
+                                trHTML += '<tr>';
+                                trHTML += "<td class ='sorting_1'>" + item["codigo"] + "</td>";
+                                trHTML += "<td>" + item["nombre"] + "</td>";
+                                trHTML += "<td>" + item["cantidad"] + "</td>";
+                                trHTML += "<td>$ " + item["precio"] + "</td>";
+                                total += item["precio"] * item["cantidad"];
+                                // trHTML += `<td><button class='btn btn-pedidos' @click='agregarAlPedido({{ item }})'><i class='fa-solid fa-circle-plus fa-2xl' style='color: #20511f;'></i></button><button class='btn btn-pedidos' @click='restarDelPedido({{ item }})'><i class='fa-solid fa-circle-minus fa-2xl' style='color: #b01717;'></i></button></td>`;
+                            }
+                            trHTML += '<tfoot><tr>';
+                            trHTML += '<td class="right" colspan="3"><b>Total</b></td>';
+                            trHTML += `<td class="right"><b>$ ${total}</b></td>`;
+                            trHTML += '</tr></tfoot>';
+                            chgtst = document.getElementById("tablaPedido")
+                            chgtst.innerHTML = trHTML;
+                        })
+                        .catch(error => {
+                            console.error('Error al obtener el pedido:', error);
+                            alert('Error al obtener el pedido.');
+                        });
+                },
             },
         });
-
         Pedido.mount('#app');
-
     </script>
 </body>
 
